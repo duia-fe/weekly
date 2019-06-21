@@ -1,17 +1,119 @@
-### 分享使用GraphQL+Sequelize
+### 分享使用GraphQL+[Sequelize](http://docs.sequelizejs.com/)
 
-[Sequelize](http://docs.sequelizejs.com/)
+##### koa2下使用sequelize（其他：mysql2）
 
-[GraphQL(一种用于 API 的查询语言)](https://graphql.cn/code/#javascript)
+```
+const Koa = require('koa');
+const router = require('koa-router')();
+const Sequelize = require('sequelize');
+const app = new Koa();
 
-[Apollo](https://www.apollographql.com/docs/apollo-server/)
+const mysql = new Sequelize('TEST', 'admin', '123456', {
+    dialect: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    timezone: '+08:00' //时区
+});
+
+const User = mysql.define('users', {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    username: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        comment: '账号'
+    },
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        comment: '密码'
+    }
+});
+User.sync();
+
+// logger
+app.use(async (ctx, next) => {
+    await next();
+    const rt = ctx.response.get('X-Response-Time');
+    console.log(`${ctx.method} ${ctx.url} - ${rt}`);
+});
+
+// x-response-time
+app.use(async (ctx, next) => {
+    const start = Date.now();
+    await next();
+    const ms = Date.now() - start;
+    ctx.set('X-Response-Time', `${ms}ms`);
+});
+
+// response
+router.get('/', async (ctx, next) => {
+    const users = await User.findAll();
+    ctx.response.body = users;
+});
+
+app.use(router.routes());
+
+app.listen({ port: 3001 }, () => console.log(`🚀 Server ready at http://localhost:3001`));
+
+
+```
+
+##### koa下使用[GraphQL(一种用于 API 的查询语言)](https://graphql.cn/code/#javascript)，[Apollo](https://www.apollographql.com/docs/apollo-server/)
+
+
+```
+const Koa = require('koa');
+const { ApolloServer, gql } = require('apollo-server-koa');
+ 
+// Construct a schema, using GraphQL schema language
+const typeDefs = gql`
+  type Query {
+    hello: String,
+  }
+`;
+ 
+// Provide resolver functions for your schema fields
+const resolvers = {
+  Query: {
+    hello: () => 'Hello world!'
+  }
+};
+ 
+const server = new ApolloServer({ typeDefs, resolvers });
+ 
+const app = new Koa();
+server.applyMiddleware({ app });
+ 
+app.listen({ port: 3000 }, () =>
+  console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`),
+);
+
+```
+
 
 
 ### 移动端分享
 
 如果是微信，需要单独配置。
+```
+import share from 'xxx/share';
+...
 
-share.ts
+if(share.isWeixin()) {
+	//在微信内，签名，配置微信分享
+
+}
+
+...
+
+```
+
+
+// share.ts
 ```
 declare const window: Window & { ucbrowser: any, ucweb: any, browser: any }
 class Share {
@@ -106,21 +208,15 @@ class Share {
 export default new Share();
 ```
 
-index.tsx
+// index.tsx
 ```
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-// import { Link } from 'react-router-dom';
 
 import '@/common/styles/share.less';
-// import logo from '../logo.svg';
 
-import betaAction from '@/store/action/beta';
 import share from '@/common/utils/share';
 
 interface IProps {
-  beta: any;
   dispatch: Dispatch;
 }
 
@@ -136,15 +232,10 @@ class Index extends Component<IProps, IState> {
       showModal: false,
       showLink: false
     };
-    this.handleClick = this.handleClick.bind(this);
     this.handleToggleShare = this.handleToggleShare.bind(this);
     this.handleToggleShareLink = this.handleToggleShareLink.bind(this);
     this.handleClickShareModal = this.handleClickShareModal.bind(this);
     this.handleStopPropagation = this.handleStopPropagation.bind(this);
-  }
-
-  public handleClick(): void {
-    this.props.dispatch(betaAction.betaChange());
   }
   public handleToggleShare(): void {
     const { showModal } = this.state;
@@ -237,22 +328,10 @@ class Index extends Component<IProps, IState> {
   }
 
   public render() {
-    const { beta } = this.props;
     const { showModal, showLink } = this.state;
-    console.log(beta);
     return (
       <div>
         <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <Link className="App-link" to="/home">
-            link
-          </Link>
-          <button onClick={this.handleClick}>change</button>
-          <div>beta:{beta.text}</div> */}
-      
           <button onClick={this.handleToggleShare}>分享</button>
           {showModal && (
             <div className="share-modal" onClick={this.handleClickShareModal}>
