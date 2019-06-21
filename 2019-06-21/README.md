@@ -1,4 +1,4 @@
-### 分享使用GraphQL+[Sequelize](http://docs.sequelizejs.com/)
+### 分享使用[GraphQL](https://graphql.cn/code/#javascript)+[Sequelize](http://docs.sequelizejs.com/)
 
 ##### koa2下使用sequelize（其他：mysql2）
 
