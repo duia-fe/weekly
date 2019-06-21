@@ -1,0 +1,30 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "graphql": "node graphql/index.js",
+    "sequelize": "node sequelize/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "apollo": "^2.13.1",
+    "apollo-server-koa": "^2.6.3",
+    "blueimp-md5": "^2.10.0",
+    "graphql": "^14.3.1",
+    "graphql-import": "^0.7.1",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.9"
+  }
+}
