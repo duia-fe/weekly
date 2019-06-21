@@ -1,3 +1,5 @@
+大家好，今天给大家分享一下node端（使用的koa）GraphQL+Sequelized的使用和移动端分享部分兼容（UC，QQ浏览器）
+
 ### 分享使用[GraphQL](https://graphql.cn/code/#javascript)+[Sequelize](http://docs.sequelizejs.com/)
 
 ##### koa2下使用sequelize（其他：mysql2）
@@ -9,50 +11,50 @@ const Sequelize = require('sequelize');
 const app = new Koa();
 
 const mysql = new Sequelize('TEST', 'admin', '123456', {
-    dialect: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    timezone: '+08:00' //时区
+  dialect: 'mysql',
+  host: 'localhost',
+  port: 3306,
+  timezone: '+08:00' // 时区
 });
 
-const User = mysql.define('users', {
-    id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
-    username: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        comment: '账号'
-    },
-    password: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        comment: '密码'
-    }
+const User = mysql.define('users', { // 如果使用user，会自动加负数
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true, // 主键
+    autoIncrement: true // 自增
+  },
+  username: {
+    type: Sequelize.STRING,
+    allowNull: false, // 不允许为空
+    comment: '账号'
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    comment: '密码'
+  }
 });
-User.sync();
+User.sync(); //如果数据库没有这个表就会新建一个
 
 // logger
 app.use(async (ctx, next) => {
-    await next();
-    const rt = ctx.response.get('X-Response-Time');
-    console.log(`${ctx.method} ${ctx.url} - ${rt}`);
+  await next();
+  const rt = ctx.response.get('X-Response-Time');
+  console.log(`${ctx.method} ${ctx.url} - ${rt}`);
 });
 
 // x-response-time
 app.use(async (ctx, next) => {
-    const start = Date.now();
-    await next();
-    const ms = Date.now() - start;
-    ctx.set('X-Response-Time', `${ms}ms`);
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  ctx.set('X-Response-Time', `${ms}ms`);
 });
 
 // response
 router.get('/', async (ctx, next) => {
-    const users = await User.findAll();
-    ctx.response.body = users;
+  const users = await User.findAll(); // 使用model请求数据
+  ctx.response.body = users;
 });
 
 app.use(router.routes());
@@ -93,6 +95,8 @@ app.listen({ port: 3000 }, () =>
 );
 
 ```
+
+##### 结合使用请查看[code/src](https://github.com/duia-fe/weekly/tree/master/2019-06-21/code)
 
 
 
@@ -389,3 +393,119 @@ class Index extends Component<IProps, IState> {
 export default connect(state => state)(Index);
 
 ```
+
+
+##### 其他
+// share.less
+```
+.share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  animation: fadeIn 0.6s linear forwards;
+  .share-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    animation: sildeUp 0.6s ease-in-out forwards;
+    overflow: hidden;
+    z-index: 1s;
+    .share-item {
+      margin: 20px;
+      .share-pic {
+        display: block;
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+        background-color: #fff;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      .share-item-text {
+        padding: 10px 0;
+        font-size: 28px;
+        color: #999;
+        text-align: center;
+      }
+    }
+  }
+  .share-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    animation: sildeUp 0.6s ease-in-out forwards;
+    color: #666;
+    text-align: left;
+    z-index: 2;
+    .share-link-wrap {
+      padding: 30px 40px;
+      .share-link-title {
+        font-size: 30px;
+        color: #333;
+      }
+      .share-link-text {
+        padding: 15px 10px;
+        border: 1px solid #ddd;
+        user-select: auto;
+      }
+    }
+    .share-link-button {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      border: none;
+      background-color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@keyframes sildeUp {
+  0% {
+    bottom: -100%;
+    opacity: 0.5;
+  }
+  100% {
+    bottom: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+```
+
+
+最后：感谢大家参与，有什么意见和建议，不对的地方欢迎拍砖，谢谢
