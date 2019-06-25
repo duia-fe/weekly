@@ -102,6 +102,11 @@ app.listen({ port: 3000 }, () =>
 
 ### 移动端分享
 
+起因：工作中我们会做很多H5页面，有些页面会涉及到项目的活动分享，这时候就需要去对不同的浏览器，不同的客户端进行兼容适配。此次是公司的小伙伴提出来做一个公共的分享，拿来就能用的。
+
+此次分享的主要是思路和部分代码。（在react项目中使用）
+
+
 如果是微信，需要单独配置。
 ```
 import share from 'xxx/share';
@@ -116,23 +121,28 @@ if(share.isWeixin()) {
 
 ```
 
+主要的js
 
 // share.ts
 ```
 declare const window: Window & { ucbrowser: any, ucweb: any, browser: any }
 class Share {
-	private ua: string = navigator.userAgent;
-	private UCplatform = [['kWeixin', 'kWeixinFriend', 'kQQ', 'kQZone', 'kSinaWeibo'], ['WechatFriends', 'WechatTimeline', 'QQ', 'QZone', 'SinaWeibo']];
+	private ua: string = navigator.userAgent; // 获取浏览器的userAgent判断是什么端
+	private UCplatform = [['kWeixin', 'kWeixinFriend', 'kQQ', 'kQZone', 'kSinaWeibo'], ['WechatFriends', 'WechatTimeline', 'QQ', 'QZone', 'SinaWeibo']]; //UC中需要使用的分享配置
 	private QQplaform = [1, 8, 4, 3, 11]; //1微信好友，8微信朋友圈，4是QQ好友，3是QQ空间，11是新浪微博
+  //判断是不是在微信网页中
 	public isWeixin() {
 		return /micromessenger/i.test(this.ua);
 	}
+  //判断是不是在QQ浏览器中，手机QQ中的网页
 	public isQQ() {
 		return this.ua.split('MQQBrowser/').length > 1 ? true : false;
 	}
+  //判断是不是在UC浏览器中
 	public isUC() {
 		return this.ua.split('UCBrowser/').length > 1 ? true : false;
 	}
+  //这里去做微信配置，配置前需要获取微信签名
 	public initWxConfig() {
 		return new Promise((resolve, reject) => {
 			if (this.isWeixin()) {
@@ -140,6 +150,7 @@ class Share {
 			}
 		})
 	}
+  //初始调用分享（除微信网页）
 	public init(title: string, description: string, img: string, url: string, index: number) {
 		return new Promise((resolve, reject) => {
 			let os = this.checkOS();
@@ -211,6 +222,8 @@ class Share {
 
 export default new Share();
 ```
+
+在项目中使用share.ts
 
 // index.tsx
 ```
@@ -396,7 +409,7 @@ export default connect(state => state)(Index);
 
 
 ##### 其他
-// share.less
+// share.less 样式
 ```
 .share-modal {
   position: fixed;
