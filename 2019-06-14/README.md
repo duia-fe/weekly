@@ -3,7 +3,7 @@
 
 参考链接：[HTML截屏](http://html2canvas.hertzen.com/)
 
-```
+```javascript
 html2canvas(document.body).then(function(canvas) {
   let img = canvas.toDataURL("image/png");
 });

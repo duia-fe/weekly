@@ -4,7 +4,7 @@
 
 ##### koa2下使用sequelize（其他：mysql2）
 
-```
+```javascript
 const Koa = require('koa');
 const router = require('koa-router')();
 const Sequelize = require('sequelize');
@@ -67,7 +67,7 @@ app.listen({ port: 3001 }, () => console.log(`🚀 Server ready at http://localh
 ##### koa下使用[GraphQL(一种用于 API 的查询语言)](https://graphql.cn/code/#javascript)，[Apollo](https://www.apollographql.com/docs/apollo-server/)
 
 
-```
+```javascript
 const Koa = require('koa');
 const { ApolloServer, gql } = require('apollo-server-koa');
  
@@ -108,9 +108,9 @@ app.listen({ port: 3000 }, () =>
 
 
 如果是微信，需要单独配置。
-```
+```javascript
 import share from 'xxx/share';
-...
+//...
 
 if(share.isWeixin()) {
 	//在微信内，签名，配置微信分享
@@ -124,7 +124,7 @@ if(share.isWeixin()) {
 主要的js
 
 // share.ts
-```
+```javascript
 declare const window: Window & { ucbrowser: any, ucweb: any, browser: any }
 class Share {
 	private ua: string = navigator.userAgent; // 获取浏览器的userAgent判断是什么端
@@ -226,7 +226,7 @@ export default new Share();
 在项目中使用share.ts
 
 // index.tsx
-```
+```javascript
 import React, { Component } from 'react';
 
 import '@/common/styles/share.less';
@@ -410,7 +410,7 @@ export default connect(state => state)(Index);
 
 ##### 其他
 // share.less 样式
-```
+```less
 .share-modal {
   position: fixed;
   top: 0;
