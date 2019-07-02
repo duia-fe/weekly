@@ -1,8 +1,8 @@
-大家好，今天给大家分享一下node端（使用的koa）GraphQL+Sequelized的使用和移动端分享部分兼容（UC，QQ浏览器）
+大家好，今天给大家分享一下 node 端（使用的 koa）GraphQL+Sequelized 的使用和移动端分享部分兼容（UC，QQ 浏览器）
 
 ### 分享使用[GraphQL](https://graphql.cn/code/#javascript)+[Sequelize](http://docs.sequelizejs.com/)
 
-##### koa2下使用sequelize（其他：mysql2）
+##### koa2 下使用 sequelize（其他：mysql2）
 
 ```javascript
 const Koa = require('koa');
@@ -17,7 +17,8 @@ const mysql = new Sequelize('TEST', 'admin', '123456', {
   timezone: '+08:00' // 时区
 });
 
-const User = mysql.define('users', { // 如果使用user，会自动加负数
+const User = mysql.define('users', {
+  // 如果使用user，会自动加负数
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true, // 主键
@@ -60,54 +61,46 @@ router.get('/', async (ctx, next) => {
 app.use(router.routes());
 
 app.listen({ port: 3001 }, () => console.log(`🚀 Server ready at http://localhost:3001`));
-
-
 ```
 
-##### koa下使用[GraphQL(一种用于 API 的查询语言)](https://graphql.cn/code/#javascript)，[Apollo](https://www.apollographql.com/docs/apollo-server/)
-
+##### koa 下使用[GraphQL(一种用于 API 的查询语言)](https://graphql.cn/code/#javascript)，[Apollo](https://www.apollographql.com/docs/apollo-server/)
 
 ```javascript
 const Koa = require('koa');
 const { ApolloServer, gql } = require('apollo-server-koa');
- 
+
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
   type Query {
-    hello: String,
+    hello: String
   }
 `;
- 
+
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
     hello: () => 'Hello world!'
   }
 };
- 
+
 const server = new ApolloServer({ typeDefs, resolvers });
- 
+
 const app = new Koa();
 server.applyMiddleware({ app });
- 
-app.listen({ port: 3000 }, () =>
-  console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`),
-);
 
+app.listen({ port: 3000 }, () => console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`));
 ```
 
 ##### 结合使用请查看[code/src](https://github.com/duia-fe/weekly/tree/master/2019-06-21/code)
 
-
-
 ### 移动端分享
 
-起因：工作中我们会做很多H5页面，有些页面会涉及到项目的活动分享，这时候就需要去对不同的浏览器，不同的客户端进行兼容适配。此次是公司的小伙伴提出来做一个公共的分享，拿来就能用的。
+起因：工作中我们会做很多 H5 页面，有些页面会涉及到项目的活动分享，这时候就需要去对不同的浏览器，不同的客户端进行兼容适配。此次是公司的小伙伴提出来做一个公共的分享，拿来就能用的。
 
-此次分享的主要是思路和部分代码。（在react项目中使用）
-
+此次分享的主要是思路和部分代码。（在 react 项目中使用）
 
 如果是微信，需要单独配置。
+
 ```javascript
 import share from 'xxx/share';
 //...
@@ -121,9 +114,10 @@ if(share.isWeixin()) {
 
 ```
 
-主要的js
+主要的 js
 
 // share.ts
+
 ```javascript
 declare const window: Window & { ucbrowser: any, ucweb: any, browser: any }
 class Share {
@@ -223,9 +217,10 @@ class Share {
 export default new Share();
 ```
 
-在项目中使用share.ts
+在项目中使用 share.ts
 
 // index.tsx
+
 ```javascript
 import React, { Component } from 'react';
 
@@ -407,9 +402,10 @@ export default connect(state => state)(Index);
 
 ```
 
-
 ##### 其他
+
 // share.less 样式
+
 ```less
 .share-modal {
   position: fixed;
@@ -516,9 +512,11 @@ export default connect(state => state)(Index);
     opacity: 1;
   }
 }
-
-
 ```
 
-
 最后：感谢大家参与，有什么意见和建议，不对的地方欢迎拍砖，谢谢
+
+---
+
+分享：`虚竹`
+作者：`虚竹`

@@ -146,3 +146,8 @@ const stores: object = {
   radio: factory<ITYPE.Iradio>('radio', {})
 };
 ```
+
+---
+
+分享：`何宇`
+作者：`何宇`
