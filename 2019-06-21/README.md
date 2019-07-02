@@ -519,4 +519,3 @@ export default connect(state => state)(Index);
 ---
 
 分享：`虚竹`
-作者：`虚竹`

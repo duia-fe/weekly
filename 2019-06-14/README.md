@@ -21,4 +21,3 @@ html2canvas(document.body).then(function(canvas) {
 ---
 
 分享：`邓伟`
-作者：`邓伟`
