@@ -16,9 +16,8 @@ compositionStart() {
 compositionEnd(e) {
   e.persist && e.persist();
   this.setState({valstate: true}, () => {
-				this.change(e);
-			}
-		);
+			this.change(e);
+		});
 	}
 change(e) {
 	const { valstate } = this.state;
@@ -61,6 +60,7 @@ componentDidMount() {
 componentWillUnmount() {
 	window.removeEventListener('popstate', Exit.closeWindowfn, false);
 }
+
 ```
 
 ---
