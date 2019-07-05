@@ -44,7 +44,7 @@ change(e) {
 
 ```javascript
 closeWindowfn() {
-window.wx.closeWindow();
+	window.wx.closeWindow();
 	this.pushHistory();
 },
 pushHistory() {
