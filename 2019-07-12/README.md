@@ -1,6 +1,6 @@
 # React一些新特性
 ## 1.React.PureComponent
-----
+
 React.PureComponent 与 React.Component 很相似。两者的区别在于 React.Component 并未实现 [shouldComponentUpdate()][1]，而 React.PureComponent 中以***浅层***对比 prop 和 state 的方式来实现了该函数。
 如果赋予 React 组件相同的 props 和 state，render() 函数会渲染相同的内容，那么在某些情况下使用 React.PureComponent 可通过减少重复渲染次数来提高性能。
  
@@ -46,7 +46,7 @@ React.PureComponent 与 React.Component 很相似。两者的区别在于 React.
 
 ----
 ## 2.React.memo
-----
+
 React.memo 为高阶组件。它与 React.PureComponent 功能非常相似，但它适用于函数组件，但不适用于 class 组件。如果将上面的Title组件用React.memo来定义的话写法如下：
 ```javascript
     const title = props => (
@@ -76,7 +76,7 @@ React.memo 为高阶组件。它与 React.PureComponent 功能非常相似，但
 ------
 
 ## 3.动态 import() 语法 (代码分割)
-----
+
 基本写法：
     
 ```javascript
@@ -93,7 +93,7 @@ React.memo 为高阶组件。它与 React.PureComponent 功能非常相似，但
 
 ----
 ## 4.React.lazy && Suspense
-----
+
 React.lazy 函数能让你像渲染常规组件一样处理动态引入（的组件）,写法如下：
 
 ```javascript
@@ -152,5 +152,7 @@ fallback 属性接受**任何**在组件加载过程中你想展示的 **React �
     );
 ```
 > **之前分享会上出现了莫名警告，现在还未解决，我有时间再研究一下，解决后再更新此文档**
+
+---
 
 分享：`李超凡`
