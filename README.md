@@ -11,4 +11,5 @@
 ### 19年7月
 
 - [7月5日分享（by龙佳）](https://github.com/duia-fe/weekly/tree/master/2019-07-05/README.md)
-- [7月12日分享（by李超凡）](https://github.com/duia-fe/weekly/tree/master/2019-07-12)
+- [7月12日分享（by李超凡）](https://github.com/duia-fe/weekly/tree/master/2019-07-12/README.md)
+- [7月19日分享（by徐旺）](https://github.com/duia-fe/weekly/tree/master/2019-07-19/README.md)
