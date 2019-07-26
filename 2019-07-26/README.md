@@ -146,24 +146,28 @@ so....person1 继承了 Person 的属性，具体怎么实现的就要抛砖引�
 
 1、person1._proto_ 是什么？
 
-**答案：**
-Person.prototype
+> **答案：**
+> Person.prototype
+
 2、Person._proto_ 是什么？
 
-**答案：**
-Function.prototype
+> **答案：**
+> Function.prototype
+
 3、Person.prototype._proto_ 是什么？
 
-**答案：**
-Object.prototype
+> **答案：**
+> Object.prototype
+
 4、Object._proto_ 是什么？
 
-**答案：**
-Function.prototype
+> **答案：**
+> Function.prototype
+
 5、Object.prototype._proto_ 是什么？
 
-**答案：**
-null
+> **答案：**
+> null
 
 #### JavaScript 中有内置(build-in)构造器/对象共计 13 个
 
@@ -181,7 +185,7 @@ null
 11.Arguments
 
 12.Math  
-13.JSON  
+13.JSON
 
 ```js
 Math.__proto__ === Object.prototype; // true
