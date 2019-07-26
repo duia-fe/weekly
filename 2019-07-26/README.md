@@ -109,7 +109,8 @@ person1.constructor == Person;
 
 > 在默认情况下，所有的原型对象都会自动获得一个 constructor（构造函数）属性，这个属性（是一个指针）指向 prototype 属性所在的函数（Person）
 
-**结论：**原型对象（Person.prototype）是 构造函数（Person）的一个实例。
+**结论：**
+原型对象（Person.prototype）是 构造函数（Person）的一个实例。
 
 ```js
 console.log(typeof Function.prototype); // Function
@@ -135,45 +136,52 @@ so....person1 继承了 Person 的属性，具体怎么实现的就要抛砖引�
 
 **问题二：null 为什么没有 _proto_？**
 
-> > > null 不是一个空引用, 而是一个原始值
+> null 不是一个空引用, 而是一个原始值
 
-> > > **问题三：null 是一个独立的数据类型，为什么 typeof(null)的值是"object"？**
-> > > typeof null 结果是 object, 这是个历史遗留 bug
+**问题三：null 是一个独立的数据类型，为什么 typeof(null)的值是"object"？**
+
+> typeof null 结果是 object, 这是个历史遗留 bug
 
 ## 原型链
 
 1、person1._proto_ 是什么？
+
 **答案：**
 Person.prototype
 2、Person._proto_ 是什么？
+
 **答案：**
 Function.prototype
 3、Person.prototype._proto_ 是什么？
+
 **答案：**
 Object.prototype
 4、Object._proto_ 是什么？
+
 **答案：**
 Function.prototype
 5、Object.prototype._proto_ 是什么？
+
 **答案：**
 null
 
 #### JavaScript 中有内置(build-in)构造器/对象共计 13 个
-1.Function
-2.Object
-3.String
-4.Array
-5.Number
-6.Boolean
-7.Date
-8.RegExp
+
+1.Function  
+2.Object  
+3.String  
+4.Array  
+5.Number  
+6.Boolean  
+7.Date  
+8.RegExp  
 9.Error
 
-10.Global
+10.Global  
 11.Arguments
 
-12.Math
-13.JSON
+12.Math  
+13.JSON  
 
 ```js
 Math.__proto__ === Object.prototype; // true
