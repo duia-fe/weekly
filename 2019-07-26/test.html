@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型和原型链</title>
+</head>
+
+<body>
+    <script>
+        function A() { }
+
+        let obj1 = {};
+        let obj2 = new Object();
+        let obj3 = new A();
+        let obj4 = new Image();
+        let obj5 = new Date();
+        let obj6 = function () { };
+        let obj7 = () => { };
+        let obj8 = new Function()
+
+        console.log('A:', typeof A);
+        console.log('obj1:', typeof obj1);
+        console.log('obj2:', typeof obj2);
+        console.log('obj3:', typeof obj3);
+        console.log('obj4:', typeof obj4);
+        console.log('obj5:', typeof obj5);
+        console.log('obj6:', typeof obj6);
+        console.log('obj7:', typeof obj7);
+        console.log('obj8:', typeof obj8);
+
+        console.log(Math.__proto__)
+        console.log(Function.prototype)
+
+        let ary = [];
+        console.log(Object.getOwnPropertyNames(ary));
+    </script>
+</body>
+
+</html>
