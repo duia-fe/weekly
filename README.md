@@ -14,3 +14,7 @@
 - [7月12日分享（by李超凡）-React一些新特性](https://github.com/duia-fe/weekly/tree/master/2019-07-12/README.md)
 - [7月19日分享（by徐旺）-SSR服务端渲染](https://github.com/duia-fe/weekly/tree/master/2019-07-19/README.md)
 - [7月26日分享（by邓伟）-原型，原型链](https://github.com/duia-fe/weekly/tree/master/2019-07-26/README.md)
+
+### 19年8月
+
+- [8月2日分享（by丁紫伊）- 设计模式原则之单一职责](https://github.com/duia-fe/weekly/blob/master/2019-08-02/Redme.md)
