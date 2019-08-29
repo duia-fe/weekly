@@ -18,4 +18,5 @@
 ### 19年8月
 
 - [8月2日分享（by丁紫伊）- 设计模式原则之单一职责](https://github.com/duia-fe/weekly/blob/master/2019-08-02/Redme.md)
-- [8月16日分享（by虚竹）- 设计模式（单例模式、工厂模式）](https://github.com/duia-fe/weekly/blob/master/2019-08-16/README.md)
+- [8月9日分享（by罗冬蓉）- 设计模式之发布/订阅模式](https://github.com/duia-fe/weekly/blob/master/2019-08-09/README.md)
+- [8月16日分享（by虚竹）- 设计模式（单例模式、工厂模式](https://github.com/duia-fe/weekly/blob/master/2019-08-16/README.md)
