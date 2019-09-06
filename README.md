@@ -23,3 +23,4 @@
 - [8月30日分享（by何宇）- 设计模式（中介者模式、混合模式、装饰模式）](https://github.com/duia-fe/weekly/blob/master/2019-08-30/README.md)
 
 ### 19年9月
+- [9月6日分享（by龙佳）- 设计模式（外观模式、享元模式、代理模式）](https://github.com/duia-fe/weekly/blob/master/2019-09-06/README.md)
