@@ -24,3 +24,4 @@
 
 ### 19年9月
 - [9月6日分享（by龙佳）- 设计模式（外观模式、享元模式、代理模式）](https://github.com/duia-fe/weekly/blob/master/2019-09-06/README.md)
+- [9月20日分享（by李超凡）- 设计模式（策略模式）](https://github.com/duia-fe/weekly/blob/master/2019-09-20/README.md)
