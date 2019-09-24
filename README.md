@@ -18,6 +18,17 @@
 
 ### 19 年 8 月
 
+<<<<<<< HEAD
 - [8 月 2 日分享（by 丁紫伊）- 设计模式原则之单一职责](https://github.com/duia-fe/weekly/blob/master/2019-08-02/Redme.md)
 - [8 月 9 日分享（by 罗冬蓉）- 设计模式之发布/订阅模式](https://github.com/duia-fe/weekly/blob/master/2019-08-09/README.md)
 - [8 月 16 日分享（by 虚竹）- 设计模式（单例模式、工厂模式](https://github.com/duia-fe/weekly/blob/master/2019-08-16/README.md)
+=======
+- [8月2日分享（by丁紫伊）- 设计模式原则之单一职责](https://github.com/duia-fe/weekly/blob/master/2019-08-02/Redme.md)
+- [8月9日分享（by罗冬蓉）- 设计模式之发布/订阅模式](https://github.com/duia-fe/weekly/blob/master/2019-08-09/README.md)
+- [8月16日分享（by虚竹）- 设计模式（单例模式、工厂模式）](https://github.com/duia-fe/weekly/blob/master/2019-08-16/README.md)
+- [8月30日分享（by何宇）- 设计模式（中介者模式、混合模式、装饰模式）](https://github.com/duia-fe/weekly/blob/master/2019-08-30/README.md)
+
+### 19年9月
+- [9月6日分享（by龙佳）- 设计模式（外观模式、享元模式、代理模式）](https://github.com/duia-fe/weekly/blob/master/2019-09-06/README.md)
+- [9月20日分享（by李超凡）- 设计模式（策略模式）](https://github.com/duia-fe/weekly/blob/master/2019-09-20/README.md)
+>>>>>>> 558688aaf230fec083e1318a6153d32d100c54dc
