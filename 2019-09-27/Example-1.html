@@ -1,0 +1,36 @@
+<script>
+    function Person1() {
+        this.name = '张三'
+        this.getName = function () {
+            return this.name
+        }
+    }
+
+    function Person2() {
+        this.name = '李四'
+        this.getName = function () {
+            return this.name
+        }
+    }
+
+    function callName(person) {
+        return person.getName()
+    }
+
+    console.log(callName(new Person1))
+    console.log(callName(new Person2Apadter))
+
+    function Person2() {
+        this.cnName = '李四'
+        this.getCNname = function () {
+            return this.cnName
+        }
+    }
+
+    function Person2Apadter() {
+        this.getName = function () {
+            return new Person2().getCNname()
+        }
+    }
+
+</script>

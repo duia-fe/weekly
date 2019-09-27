@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.js"></script>
+</head>
+
+<body>
+    <script>
+        axios.get('http://192.168.100.53:8081/api/notbusiness/city')
+            .then(function (response) {
+                console.log(response.data.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+
+        function request() {
+            return new Promise(function (reolve, reject) {
+                axios.get('http://192.168.100.53:8081/api/notbusiness/city')
+                    .then(function (response) {
+                        reolve(response.data)
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+            })
+        }
+
+        request().then(function (response) {
+            console.log(response.data)
+        })
+    </script>
+</body>
+
+</html>
