@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dd"></div>
+</body>
+<script>
+// var Light = function() {
+//     this.state = 0;
+//     this.button = null;
+// };
+// Light.prototype.init = function(ele='') {
+//     var button = document.createElement('button'),
+//         self = this,
+//         element =  document.body;
+//     if(ele.indexOf('.') === 0){    
+//         element = document.getElementsByClassName(ele.substr(1,ele.length-1))[0]        
+//     }
+//     button.innerHTML = '开 关';
+//     this.button = element.appendChild(button);
+//     this.button.onclick = function() {
+//         self.buttonWasPressed();
+//     };
+// };
+// Light.prototype.buttonWasPressed = function() {
+//     if (this.state === 0) {
+//         console.log('开 灯');
+//         this.state = 1;
+//     } else if (this.state === 1) {
+//         console.log('关 灯');
+//         this.state = 0;
+//     }
+// };
+// var light = new Light();
+// light.init('.dd');
+
+var OffLightState = function(light) {
+    this.light = light;
+};
+OffLightState.prototype.buttonWasPressed = function() {
+    console.log('柔和光'); // offLightState 对 应 的 行 为
+    this.light.setState(this.light.normalLightState); // 切 换 状 态 到NormalLightState
+};
+
+var NormalLightState = function(light) {
+    this.light = light;
+};
+NormalLightState.prototype.buttonWasPressed = function() {
+    console.log('正常光'); // offLightState 对 应 的 行 为
+    this.light.setState(this.light.weakLightState); // 切 换 状 态 到weakLightState
+};
+
+var WeakLightState = function(light) {
+    this.light = light;
+};
+WeakLightState.prototype.buttonWasPressed = function() {
+    console.log('强 光'); // weakLightState 对 应 的 行 为
+    this.light.setState(this.light.strongLightState); // 切 换 状 态 到 strongLightState
+};
+
+var StrongLightState = function(light) {
+    this.light = light;
+};
+StrongLightState.prototype.buttonWasPressed = function() {
+    console.log('关 灯'); // strongLightState 对 应 的 行 为
+    this.light.setState(this.light.offLightState); // 切 换 状 态 到 offLightState
+};
+// 改写Light
+var Light = function() {
+    this.offLightState = new OffLightState(this);
+    this.normalLightState = new NormalLightState(this);
+    this.weakLightState = new WeakLightState(this);
+    this.strongLightState = new StrongLightState(this);
+    this.button = null;
+};
+Light.prototype.init = function() {
+    var button = document.createElement('button'),
+        self = this;
+    this.button = document.body.appendChild(button);
+    this.button.innerHTML = '开 关';
+    this.currState = this.offLightState; // 设 置 当 前 状 态
+    this.button.onclick = function() {
+        self.currState.buttonWasPressed();
+    };
+};
+Light.prototype.setState = function(newState) {
+    this.currState = newState;
+};
+var light = new Light();
+light.init();
+</script>
+</html>

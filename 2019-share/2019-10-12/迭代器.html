@@ -1,0 +1,98 @@
+<script>
+function each(obj, cb) {
+    var value;
+    if (Array.isArray(obj)) {
+        //判断是不是数组
+        for (var i = 0; i < obj.length; ++i) {
+            value = cb.call(obj[i], i, obj[i]);
+            if (value === false) {
+                break;
+            }
+        }
+    } else {
+        for (var i in obj) {
+            value = cb.call(obj[i], i, obj[i]);
+            if (value === false) {
+                break;
+            }
+        }
+    }
+}
+
+// each([1, 2, 3], function(index, value) {
+//     console.log(index, value); //打印 0 1 ；1 2；2 3
+// });
+
+// each({ a: 1, b: 2 }, function(index, value) {
+//     console.log(index, value); //打印 a 1; b 2;
+// });
+
+
+// var Iterator = function(obj) {
+//     var current = 0;
+//     var next = function() {
+//         current += 1;
+//     };
+//     var isDone = function() {
+//         return current >= obj.length;
+//     };
+//     var getCurrItem = function() {
+//         return obj[current];
+//     };
+//     return {
+//         next: next,
+//         isDone: isDone,
+//         getCurrItem: getCurrItem
+//     };
+// };
+
+// var compare = function(iterator1, iterator2) {
+//     while (!iterator1.isDone() && !iterator2.isDone()) {
+//         if (iterator1.getCurrItem() !== iterator2.getCurrItem()) {
+//             throw new Error('iterator1 和 iterator2 不 相 等');
+//         }
+//         iterator1.next();
+//         iterator2.next();
+//     }
+//     alert('iterator1 和 iterator2 相 等');
+// };
+// var iterator1 = Iterator([1, 2, 3]);
+// var iterator2 = Iterator([1, 2, 3]);
+// compare(iterator1, iterator2);
+
+// 条件迭代
+function year2000() {
+    var year = new Date().getFullYear();
+    if (year <= 2000) {
+        console.log('A');
+    }
+    return false;
+}
+
+function year2100() {
+    var year = new Date().getFullYear();
+    if (year >= 2100) {
+        console.log('C');
+    }
+    return false;
+}
+
+function year() {
+    var year = new Date().getFullYear();
+    if (year > 2000 && year < 2100) {
+        console.log('B');
+    }
+    return false;
+}
+
+function iteratorYear() {
+    for (var i = 0; i < arguments.length; ++i) {
+        var ret = arguments[i]();
+        if (ret !== false) {
+            return ret;
+        }
+    }
+}
+iteratorYear(year2000, year2100, year); // B
+
+</script>
