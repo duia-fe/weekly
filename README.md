@@ -27,7 +27,7 @@
 
 - [9 月 6 日分享（by 龙佳）- 设计模式（外观模式、享元模式、代理模式）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-09-06/README.md)
 - [9 月 20 日分享（by 李超凡）- 设计模式（策略模式）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-09-20/README.md)
-- [9 月 27 日分享（by 邓伟）- 设计模式（适配器模式）](https://github.com/duia-fe/weekly/blob/master/2019-09-27/README.md)
+- [9 月 27 日分享（by 邓伟）- 设计模式（适配器模式）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-09-27/README.md)
 
 ### 19 年 10 月
 
