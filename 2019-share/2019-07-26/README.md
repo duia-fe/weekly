@@ -37,7 +37,7 @@ console.log('obj8:', typeof obj8);
 
 ### 普通对象与函数对象图解
 
-![Image text](https://github.com/duia-fe/weekly/blob/master/2019-07-26/object%E5%92%8Cfunction%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg)
+![Image text](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-07-26/object%E5%92%8Cfunction%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9B%BE.jpg)
 
 ### 构造函数
 
@@ -237,7 +237,7 @@ Function 也是对象函数，也是通过 new Function()创建，所以 Functio
 
 ### 原型链图解
 
-![Image text](https://github.com/duia-fe/weekly/blob/master/2019-07-26/%E5%8E%9F%E5%9E%8B%E9%93%BE.png)
+![Image text](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-07-26/%E5%8E%9F%E5%9E%8B%E9%93%BE.png)
 
 ### 总结：
 
