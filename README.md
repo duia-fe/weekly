@@ -33,3 +33,4 @@
 
 - [10 月 12 日分享（by 徐旺）- 设计模式（职责链模式、迭代器模式、状态模式）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-10-12/README.md)
 - [10 月 18 日分享（by 丁紫伊）- 性能优化（DOM 优化原理与基本实践、事件的节流（throttle）与防抖（debounce））](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-10-18/README.md)
+- [10 月 26 日分享（by 罗冬蓉）- 性能优化（作用域链对性能的影响））](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-10-25/README.md)
