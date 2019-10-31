@@ -1,15 +1,15 @@
 import axios , { AxiosResponse } from "axios";
 
 #### declare var window: any;
-##### <ÖĞ½éÕßÄ£Ê½>£¬Ô¼¶¨¸÷¸ö½Ó¿Ú·µ»ØÊı¾İ¸ñÊ½
+##### <ä¸­ä»‹è€…æ¨¡å¼>ï¼Œçº¦å®šå„ä¸ªæ¥å£è¿”å›æ•°æ®æ ¼å¼
 ```
 interface BackDataProps {
-    message: string; // ĞÅÏ¢
-    state: number; // ×´Ì¬
-    data: any; // Êı¾İ
+    message: string; // ä¿¡æ¯
+    state: number; // çŠ¶æ€
+    data: any; // æ•°æ®
 }
 ```
-##### ÖĞ½éÕß
+##### ä¸­ä»‹è€…
 ```
 function DecoratorBackData({data,status,statusText}: AxiosResponse ): BackDataProps{
     return {
@@ -22,7 +22,7 @@ function DecoratorBackData({data,status,statusText}: AxiosResponse ): BackDataPr
 function getWeatherInfo(): Promise<BackDataProps> {
     return axios({url:"/weather"})
     .then( rel => {
-        // ÖĞ½éÕßÍ³Ò»¸÷¸ö½Ó¿Ú·µ»Ø¸ñÊ½
+        // ä¸­ä»‹è€…ç»Ÿä¸€å„ä¸ªæ¥å£è¿”å›æ ¼å¼
         return DecoratorBackData(rel);
     });
 }
@@ -38,27 +38,27 @@ function getZongheng(): Promise<BackDataProps> {
     });
 }
 ```
-###### Ô­À´µÄ½Ó¿Ú
+###### åŸæ¥çš„æ¥å£
 ```
 getZongheng().then( rel => {
     console.log("getZongheng",rel);
 });
 ```
-###### ĞÂ½ØÍ¼Ä£¿éµÄ½Ó¿Ú
+###### æ–°æˆªå›¾æ¨¡å—çš„æ¥å£
 ```
 getWeatherInfo().then(rel => {
     console.log("getWeatherInfo",rel);
 });
 ```
 -----
-#### <»ìºÏÄ£Ê½>£¬ÔÚÒ»¸ö¶ÔÏóÔ­ĞÍÁ´ÉÏÌí¼Ó¶îÍâµÄÖ°ÄÜº¯Êı»òÕßÖØÔØÄ³¸öº¯Êı
+#### <æ··åˆæ¨¡å¼>ï¼Œåœ¨ä¸€ä¸ªå¯¹è±¡åŸå‹é“¾ä¸Šæ·»åŠ é¢å¤–çš„èŒèƒ½å‡½æ•°æˆ–è€…é‡è½½æŸä¸ªå‡½æ•°
 ```
 class Book{
     private num: number = 0;
     constructor(){
 
     }
-    // Ò³Êı¼ÆËã·½Ê½º¯Êı
+    // é¡µæ•°è®¡ç®—æ–¹å¼å‡½æ•°
     public count(num: number){
         return num ++;
     }
@@ -74,7 +74,7 @@ class Book{
         }
     }
 }
-// ¼ÙÉèÒ»±¾Í¼Êé£¬ÎÒÃÇĞŞ¸ÄÁËÒÔÇ°µÄÒ³Êı¼ÆËã·½Ê½£¬¾ÍÀ«ÒÔÖ±½ÓÓÃ¸ÄÃû³ÆÖ±½ÓÖØÔØ·½·¨
+// å‡è®¾ä¸€æœ¬å›¾ä¹¦ï¼Œæˆ‘ä»¬ä¿®æ”¹äº†ä»¥å‰çš„é¡µæ•°è®¡ç®—æ–¹å¼ï¼Œå°±é˜”ä»¥ç›´æ¥ç”¨æ”¹åç§°ç›´æ¥é‡è½½æ–¹æ³•
 Book.extends("count", num => num + 10, true);
 
 const book = new Book();
@@ -82,27 +82,27 @@ book.run();
 book.print();
 ```
 -----
-#### <×°ÊÎÄ£Ê½>£¬¾ÍÊÇ³ö³§»ùÀàÊµÀı»¯ºóÖ±½ÓÔÚÆäÒıÓÃÉÏÌí¼Óº¯Êı
-##### ÒÔÉÏÃæµÄ·­ÊéÎªÀı£¬ÎÒÃÇÖ±½ÓÊ¹ÓÃBook.extends»áÖØÔØÕû¸öº¯Êı£¬»áÓ°ÏìÕû¸öÅÉÉúÀàµÄÊµÀı¼ÆËã
+#### <è£…é¥°æ¨¡å¼>ï¼Œå°±æ˜¯å‡ºå‚åŸºç±»å®ä¾‹åŒ–åç›´æ¥åœ¨å…¶å¼•ç”¨ä¸Šæ·»åŠ å‡½æ•°
+##### ä»¥ä¸Šé¢çš„ç¿»ä¹¦ä¸ºä¾‹ï¼Œæˆ‘ä»¬ç›´æ¥ä½¿ç”¨Book.extendsä¼šé‡è½½æ•´ä¸ªå‡½æ•°ï¼Œä¼šå½±å“æ•´ä¸ªæ´¾ç”Ÿç±»çš„å®ä¾‹è®¡ç®—
 ```
 class Desk extends Book{
     constructor(){
         super();
     }
 }
-// ÔÚÒÔÏÂÊµÀıÖĞ£¬ÎÒÃÇÆäÊµĞèÒªµÄÔ­À´µÄÒ³Êı¼ÆËã·½Ê½
+// åœ¨ä»¥ä¸‹å®ä¾‹ä¸­ï¼Œæˆ‘ä»¬å…¶å®éœ€è¦çš„åŸæ¥çš„é¡µæ•°è®¡ç®—æ–¹å¼
 const desk = new Desk();
 desk.run();
 desk.print();
 
-// ÕâÀïÎÒÃÇ¾ÍĞèÒªÖØĞÂµ÷ÕûÂß¼­
-// ×¢ÊÍ Book.extends("count", num => num + 10, true);
-// Ê¹ÓÃ book.count = num => num + 10;
+// è¿™é‡Œæˆ‘ä»¬å°±éœ€è¦é‡æ–°è°ƒæ•´é€»è¾‘
+// æ³¨é‡Š Book.extends("count", num => num + 10, true);
+// ä½¿ç”¨ book.count = num => num + 10;
 
-// ÏÂÃæÎÒÃÇÀ´¿´Ò»¸ö¸ü¼ÓÖ±¹ÛµÄ×°ÊÎÄ£Ê½
-// ÎÒÃÇÀ´´´½¨Ò»¸ö¼òÒ×µÄ¹Û²ìÕß£¬×öÊı¾İÇı¶¯
+// ä¸‹é¢æˆ‘ä»¬æ¥çœ‹ä¸€ä¸ªæ›´åŠ ç›´è§‚çš„è£…é¥°æ¨¡å¼
+// æˆ‘ä»¬æ¥åˆ›å»ºä¸€ä¸ªç®€æ˜“çš„è§‚å¯Ÿè€…ï¼Œåšæ•°æ®é©±åŠ¨
 declare var Object: any;
-// »ùÓÚvue2µÄÊı¾İÇı¶¯
+// åŸºäºvue2çš„æ•°æ®é©±åŠ¨
 function observer(node: HTMLInputElement , feedback: HTMLElement ){
     const model = {
         val: ""
