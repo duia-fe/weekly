@@ -1,4 +1,4 @@
-### preload
+### Preload
 
 `<link>` 标签最常见的应用情形就是被用来加载 CSS 文件，进而装饰你的页面：
 
@@ -7,7 +7,9 @@
 ```
 
 ```html
-<link rel="preload" href="xxx.css" as="style" /> <link rel="preload" href="xxx.js" as="script" />
+<link rel="preload" href="xxx.css" as="style" />
+
+<link rel="preload" href="xxx.js" as="script" />
 ```
 
 支持的有`audio` `embed` `font` `image` `video` `style` `script` `document`等
@@ -43,7 +45,7 @@
 
 ##### 关于动画加载与人们的反应
 
-- ![alt 图片](./img/4.jpg)
+![alt 图片](./img/4.jpg)
 
 - 一个动作的响应，一般建议一般在 100 毫秒内解决。
 - 需要超过 500 毫秒才能完成的操作，始终要让用户觉得还在动，例如 `Loading` `骨架屏`等。
