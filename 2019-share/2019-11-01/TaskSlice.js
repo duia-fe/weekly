@@ -1,10 +1,3 @@
-/**
- * @name 任务切片
- * @description 一个用来做性能优化的工具
- * @author xichen Liu
- * @version 1.0.0
- */
-
 var raf = window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : setTimeout;
 
 var isArray = arg => arg instanceof Array && arg.constructor === Array;

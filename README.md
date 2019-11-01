@@ -36,3 +36,5 @@
 - [10 月 26 日分享（by 罗冬蓉）- 性能优化（作用域链对性能的影响））](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-10-25/README.md)
 
 ### 19 年 11 月
+
+- [11 月 01 日分享（by 虚竹）- 性能优化（Task Slice））](https://github.com/duia-fe/weekly/tree/master/2019-share/2019-11-01/README.md)
