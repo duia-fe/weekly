@@ -38,3 +38,4 @@
 ### 19 年 11 月
 
 - [11 月 01 日分享（by 虚竹）- 性能优化（Task Slice）](https://github.com/duia-fe/weekly/tree/master/2019-share/2019-11-01/README.md)
+- [11 月 15 日分享（by 龙佳）- 性能优化（代码优化）](https://github.com/duia-fe/weekly/tree/master/2019-11-15/2019-11-01share/README.md)
