@@ -40,3 +40,4 @@
 - [11 月 01 日分享（by 虚竹）- 性能优化（Task Slice）](https://github.com/duia-fe/weekly/tree/master/2019-share/2019-11-01/README.md)
 - [11 月 08 日分享（by 何宇）- 性能优化（浏览器是如何解析html文档的、DOM，天生就慢）](https://github.com/duia-fe/weekly/tree/master/2019-share/2019-11-08/README.md)
 - [11 月 15 日分享（by 龙佳）- 性能优化（代码优化）](https://github.com/duia-fe/weekly/tree/master/2019-share/2019-11-15/share.md)
+- [11 月 22 日分享（by 李超凡）- 性能优化（CSS动画的硬件加速等）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-11-22/README.md) 
