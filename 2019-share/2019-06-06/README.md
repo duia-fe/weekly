@@ -1,6 +1,6 @@
 ### 微信小程序问题分享
 
-scroll-view 内 image 图片圆角问题
+scroll-view 内 image 图片圆角问题  可以试试：transform:translateZ(0);
 
 ```xml
 <view style="width: 320px;height: 150px;border-radius: 20px; overflow:hidden;">
