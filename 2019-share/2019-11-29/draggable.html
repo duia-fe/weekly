@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>multi-column</title>
+    <style>
+        .drag-box{
+            display: flex;
+            font-size: 12px;
+        }
+        #drag {
+            padding: 30px;
+            text-align: center;
+            background-color: #DB5F5D;
+            color: white;
+            width: 50px;
+            white-space: wrap;
+        }
+        #dustbin{
+            border:1px dashed black;
+            padding: 20px;
+            margin-left: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drag-box">
+        <div id="drag" draggable="true">请扒拉我</div>
+        <div id="dustbin"><br />垃<br />圾<br />箱</div>
+    </div>
+    <script>
+        var dom = document.getElementById("drag")
+        dom.addEventListener("dragstart", function () {
+            dom.innerHTML = "我被拖住了>_<"
+        })
+        dom.addEventListener("dragend", function () {
+            dom.style.visibility="hidden"
+        })
+        var dustbin = document.getElementById("dustbin")
+        dustbin.addEventListener('dragover',function(){
+            dom.innerHTML ="松开手，我就会被扔进垃圾桶"
+        })
+    </script>
+</body>
+
+</html>

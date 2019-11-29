@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>multi-column</title>
+    <style>
+        .main {
+            padding: 0;
+            margin: 0;
+            column-count: 5;
+            column-gap: 10px;
+            counter-reset: item-counter;
+            /* column-rule-width:2px;
+            column-rule-style:dashed;
+            column-rule-color:brown; */
+        }
+
+        .item {
+            box-sizing: border-box;
+            break-inside: avoid;
+            padding: 10px 10px 0 0;
+        }
+
+        .item p {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+            line-height: 34px;
+            text-indent: 8px;
+            background-color: #369;
+        }
+
+        .item-200 {
+            height: 200px;
+        }
+
+        .item-100 {
+            height: 100px;
+        }
+
+        .item-260 {
+            height: 260px;
+        }
+
+        .item-140 {
+            height: 140px;
+        }
+
+        .item-80 {
+            height: 80px;
+        }
+
+        .item-170 {
+            height: 170px;
+        }
+
+        .item-450 {
+            height: 450px;
+        }
+
+        .grid {
+            width: 200px;
+            border: 1px solid black;
+            display: inline-grid;;
+            padding: 10px;
+            grid-template-columns: repeat(3 ,1fr);
+            grid-template-rows: 100px 100px 100px;
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+            grid-gap: 10px 10px;
+           
+        }
+
+        .box-item {
+            /* width: 50px;
+            height: 50px; */
+            /* line-height: 50px; */
+            width: 100%;
+            text-align: center;
+            background-color: #89648C;
+            margin: 0 auto;
+            
+        }
+
+
+        .drag-box{
+            columns: 3;
+            font-size: 12px;
+            column-gap: 10px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="item item-200">
+            <p>1</p>
+        </div>
+        <div class="item item-100">
+            <p>2</p>
+        </div>
+        <div class="item item-260">
+            <p>3</p>
+        </div>
+        <div class="item item-80">
+            <p>4</p>
+        </div>
+        <div class="item item-450">
+            <p>5</p>
+        </div>
+        <div class="item item-80">
+            <p>6</p>
+        </div>
+        <div class="item item-170">
+            <p>7</p>
+        </div>
+        <div class="item item-140">
+            <p>8</p>
+        </div>
+        <div class="item item-100">
+            <p>9</p>
+        </div>
+        <div class="item item-260">
+            <p>10</p>
+        </div>
+        <div class="item item-80">
+            <p>11</p>
+        </div>
+        <div class="item item-140">
+            <p>12</p>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="box-item">1</div>
+        <div class="box-item">2</div>
+        <div class="box-item">3</div>
+        <div class="box-item">4</div>
+        <div class="box-item">5</div>
+        <div class="box-item">6</div>
+        <div class="box-item">7</div>
+        <div class="box-item">8</div>
+        <div class="box-item">9</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webworker</title>
+</head>
+
+<body>
+    <button onclick="start()">点击开始</button>
+    <button onclick="closeByMain()">关闭子线程</button>
+    <button onclick="closeByWorder()">子线程关闭自己</button>
+    <p id="show"></p>
+    <input type="text">
+</body>
+<script id="webworker" type="unknown">
+        var i = 0;
+        var arr = Array.from({ length: 8192 }, () => Math.random() * 10000);
+        function timedCount() {
+            for (let i = 0; i < 5000; i++) {
+                arr.sort(); 
+            }
+            console.log(arr)
+            postMessage(arr);
+        }
+
+        this.addEventListener('message', function (e) {
+            this.postMessage('主线程告诉我: ' + e.data);
+            switch(e.data){
+                case 'start':
+                    timedCount();
+                    break;
+                case 'close':
+                    console.log("子线程自我关闭")
+                    this.close()
+            }
+        }, false);
+
+</script>
+<script>
+
+    var blob = new Blob([document.getElementById('webworker').text]);
+    var myWorker = new Worker(window.URL.createObjectURL(blob));
+    var showDom  = document.getElementById("show")
+    myWorker.onmessage = function (event) {
+        showDom.innerHTML = "子线程返回消息："+event.data
+    }
+    function start(){
+        myWorker.postMessage("start")
+    }
+    function closeByMain(){
+        myWorker.terminate()
+    }
+    function closeByWorder(){
+        console.log(4234)
+        myWorker.postMessage("close")
+    }
+</script>
+
+
+<!-- <script>
+    var i = 0;
+    var arr = Array.from({ length: 8192 }, () => Math.random() * 10000);
+    var showDom = document.getElementById("show")
+    function timedCount() {
+        for (let i = 0; i < 5000; i++) {
+            arr.sort(); 
+        }
+        console.log(arr)
+    }
+    function start() {
+        timedCount();
+    }
+
+</script> -->
+
+</html>
