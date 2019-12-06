@@ -33,6 +33,7 @@ console.log('obj8:', typeof obj8);
 ```
 
 凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象，构造函数 A 和 obj6、obj7 底层也是通过 new Function()创建的，只是写法不一样。
+
 **问题一：** 为什么通过 new A() 会是 object 呢？
 
 ### 普通对象与函数对象图解
