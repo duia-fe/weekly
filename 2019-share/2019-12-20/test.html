@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const s = new Set();
+        [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));//向数组中添加数据
+        for (let i of s) {
+            console.log(i); // 2 3 5 4
+        }
+        // 去除数组的重复成员
+        let array = [1, 2, 1, 4, 5, 3];
+        let arr = [...new Set(array)]; // [1, 2, 4, 5, 3]
+        console.log(arr);//存储方式类似数据结构的顺序查找法
+
+
+        const mySet = new Set(['a', 'a', 'b', 1, 2, 1])
+        console.log(mySet)  // {'a', 'b', 1, 2}
+        mySet.add('c').add({ 'a': 1 })
+        console.log(mySet) // {'a', 'b', 1, 2, 'c', {a: 1}}
+        console.log(mySet.size) // 6
+        mySet.has(2) // true
+
+
+        const set = new Set(['a', 'b', 'c'])
+        for (let item of set.keys()) {
+            console.log(item)
+        }
+        // a
+        // b
+        // c
+
+        for (let item of set.values()) {
+            console.log(item)
+        }
+        // a
+        // b
+        // c
+
+        for (let item of set.entries()) {
+            console.log(item)
+        }
+        // ["a", "a"]
+        // ["b", "b"]
+        // ["c", "c"]
+
+        // 直接遍历set实例，等同于遍历set实例的values方法
+        for (let i of set) {
+            console.log(i)
+        }
+        // a
+        // b
+        // c
+
+        set.forEach((value, key) => console.log(key + ' : ' + value))
+
+    // a: a
+    // b: b
+    // c: c
+
+    </script>
+</body>
+
+</html>
