@@ -47,3 +47,5 @@
 
 - [12 月 06 日分享（by 邓伟）- 性能优化（图片相关）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-06/README.md)
 - [12 月 13 日分享（by 徐旺）- ES6（前瞻、let与const、解构赋值、延展操作符、Symbol）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-13/README.md)
+- [12 月 20 日分享（by 丁紫伊）- ES6(Set与Map)](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-20/README.md)
+
