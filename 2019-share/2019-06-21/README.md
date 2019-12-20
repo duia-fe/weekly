@@ -91,7 +91,7 @@ server.applyMiddleware({ app });
 app.listen({ port: 3000 }, () => console.log(`🚀 Server ready at http://localhost:3000${server.graphqlPath}`));
 ```
 
-##### 结合使用请查看[code/src](https://github.com/duia-fe/weekly/tree/master/2019-06-21/code)
+##### 结合使用请查看[code/src](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-06-21/code)
 
 ### 移动端分享
 
