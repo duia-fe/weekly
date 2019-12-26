@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function* g() {
+        yield 'a';
+        yield 'b';
+        yield 'c';
+        return 'ending';
+      }
+      g(); // 返回一个对象
+
+      // var gen = g();
+      // console.log(gen);
+      // var result = gen.next(); // 返回Object {value: "a", done: false}
+      // console.log(result);
+      // console.log(gen.next());
+      // console.log(gen.next());
+      // console.log(gen.next());
+      // console.log(gen.next());
+
+      // function* g1() {
+      //   var o = 1;
+      //   yield o++;
+      //   yield o++;
+      //   yield o++;
+      // }
+      // var gen1 = g1();
+      // console.log(gen1.next()); // 1
+      // var other = g1();
+      // console.log(gen1.next()); // 2
+      // console.log(other.next()); // 1
+      // console.log(gen1.next()); // 3
+      // console.log(other.next()); //2
+
+      // function* g2() {
+      //   var o = 1;
+      //   var a = yield o++;
+      //   console.log('a = ' + a);
+      //   var b = yield a * o++;
+      //   var c = yield b * o++;
+      //   var d = yield c * o++;
+      // }
+      // var gen = g2();
+      // console.log(gen.next()); //1
+      // console.log('------');
+      // console.log(gen.next(11)); //22
+      // console.log(gen.next()); //NaN
+      // console.log(gen.next(6)); //24
+
+      function* foo() {
+        yield 'hh';
+        yield 'mm';
+        return;
+      }
+      function* goo() {
+        yield 2;
+        yield 3;
+        return 'foo';
+      }
+      function* bar() {
+        yield 1;
+        let v = yield* goo();
+        console.log('v: ' + v);
+        yield 4;
+        for (let i of foo()) {
+          console.log(i);
+        }
+      }
+      let it = bar();
+      console.log(it.next());
+      // {value: 1, done: false}
+      console.log(it.next());
+      // {value: 2, done: false}
+      console.log(it.next());
+      // {value: 3, done: false}
+      console.log(it.next());
+      // "v: foo"
+      // {value: 4, done: false}
+      console.log(it.next());
+      // {value: undefined, done: true}
+    </script>
+    <script>
+      //准备
+      function prepare(next) {
+        setTimeout(function() {
+          console.log('prepare chicken');
+          next();
+        }, 500);
+      }
+
+      //炒鸡
+      function fired(next) {
+        setTimeout(function() {
+          console.log('fired chicken');
+          next();
+        }, 500);
+      }
+      //炖鸡
+      function stewed(next) {
+        setTimeout(function() {
+          console.log('stewed chicken');
+          next();
+        }, 500);
+      }
+      //上料
+      function sdd(next) {
+        setTimeout(function() {
+          console.log('sdd chicken');
+          next();
+        }, 500);
+      }
+      //上菜
+      function serve(next) {
+        setTimeout(function() {
+          console.log('serve chicken');
+          next();
+        }, 500);
+      }
+
+      //流程控制
+      function run(fn) {
+        const gen = fn();
+        function next() {
+          const result = gen.next();
+          if (result.done) return; //结束
+          // result.value就是yield返回的值，是各个工序的函数
+          result.value(next); //next作为入参，即本工序成功后，执行下一工序
+        }
+        next();
+      }
+      //工序
+      function* task() {
+        yield prepare;
+        yield fired;
+        yield stewed;
+        yield sdd;
+        yield serve;
+      }
+      run(task); //开始执行
+    </script>
+  </body>
+</html>

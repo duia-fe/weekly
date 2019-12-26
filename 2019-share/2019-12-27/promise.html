@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let p = new Promise(resolve => {
+        setTimeout(() => {
+          resolve('hello hello');
+        }, 2000);
+      });
+      let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject('bye bye');
+        }, 2000);
+      });
+      let p2 = new Promise(resolve => {
+        setTimeout(() => {
+          resolve('123345');
+        }, 2000);
+      });
+      Promise.race([p1,p,p2]).then(val => {
+        console.log(val,'Promise.all()结果');
+      });
+    </script>
+  </body>
+</html>
