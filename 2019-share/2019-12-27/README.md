@@ -22,6 +22,37 @@
 
 - 缺点：首先，无法取消 Promise，一旦新建它就会立即执行，无法中途取消。其次，当处于 Pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
+```javascript
+function getPoster(url, name) {
+  const promise = new Promise(function(resolve, reject) {
+    $.ajax({
+      url: url,
+      success(res) {
+        let value = res.filter(item => {
+          if (item.id == name) return;
+        })[0].id;
+        resolve(value);
+      }
+    });
+  });
+  return promise;
+}
+let url1 = 'https://enxcx.rd.duia.com/rm/mine';
+let url2 = 'https://enxcx.rd.duia.com/rm/punch-card-log';
+let url3 = 'https://mp.api.test.duia.com/commodity/commodityBase';
+
+getPoster(url1, 'c1')
+  .then(res => {
+    return getPoster(url2, res);
+  })
+  .then(res => {
+    return getPoster(url3, res);
+  })
+  .then(res => {
+    console.log(res);
+  });
+```
+
 ## Promise 实例
 
 （1）简单的 promise 实例
