@@ -193,6 +193,6 @@ for (let i of iterable) {
 
 分享：`虚竹`
 
-- 扩展：[Promise 实现](./Promise.md)
-
 ---
+
+- 扩展：[Promise 实现](./Promise.md)
