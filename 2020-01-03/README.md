@@ -47,11 +47,11 @@ let b = str[Symbol.iterator]();
 通过 @@iterator 方法重新定义迭代行为
 
 ```javascript
-let str = new String('Hello world'); // need to construct a String object explicitly to avoid auto-boxing
+let str = new String('Hello world'); //使用String搞一个字符串
 
 str[Symbol.iterator] = function() {
   return {
-    // this is the iterator object, returning a single element, the string "bye"
+    // 迭代对象返回‘bye’
     next: function() {
       if (this._first) {
         this._first = false;
@@ -63,6 +63,7 @@ str[Symbol.iterator] = function() {
     _first: true
   };
 };
+console.log([...str], str + '');
 ```
 
 ### 上面问题的解决办法
