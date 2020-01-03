@@ -133,6 +133,8 @@ console.log([...obj]); // 打印 [1, 2, 3]
   Promise.all()
   Promise.race()
 
+### 疑问：为什么对象（Object）没有默认部署 Iterator 接口？
+
 ### for...of 循环
 
 for...of 语句在可迭代对象（包括 Array，Map，Set，String，TypedArray，arguments 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句，for...of 循环内部调用的是数据结构的 Symbol.iterator 方法。
