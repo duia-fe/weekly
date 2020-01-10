@@ -9,7 +9,7 @@
 
 > 这里顺带演示一下类的修饰符。
 > static表示该方法可以通过类直接访问，public表示该属性公开，protected表示只能通过实例调用，private，表示只能在实例内部调用。
-```
+```javascript
 class proxyClass{
     public test;
     public proxy;
@@ -33,7 +33,7 @@ class proxyClass{
 1. 类的原型对象
 2. 所要装饰的属性名
 3. 该属性的描述对象。
-```
+```javascript
 function log(constructor: object, name: string,descriptor: any){
     // 我们来打印一下属性的描述
     console.log(descriptor,"descriptor");
@@ -75,7 +75,7 @@ function log(constructor: object, name: string,descriptor: any){
 
 # 直接贴代码
 example1
-```
+```javascript
 // 我们来玩一个好玩的东西，通过代理进行链式操作
 class exampleClass{
     private way = {};
@@ -114,7 +114,7 @@ function example(){
 export default example;
 ```
 example2
-```
+```javascript
 // Proxy 对象用于定义基本操作的自定义行为（如属性查找，赋值，枚举，函数调用等）
 // https://juejin.im/post/5bf3e632e51d452baa5f7375
 // vue3将数据驱动核心Object.defineProperty过渡到Proxy，解决了由于某些操作无法监听而导致数据不能实时响应
@@ -258,7 +258,7 @@ console.log('this is keys',Object.keys(P.proxy));
 // example.default();
 ```
 example3
-```
+```javascript
 // 这里我们来做Object.defineProperty与proxy的对比
 
 let data1:any = {};
@@ -299,7 +299,7 @@ ex2[1] = 4;
 // 参考https://segmentfault.com/q/1010000021048654
 ```
 example4
-```
+```javascript
 class test1{
     static names:string = "heyu1"
     public age:number = 18
