@@ -8,6 +8,7 @@
 
 - [1 月 3 日分享（by 虚竹）- ES6（迭代器）](https://github.com/duia-fe/weekly/blob/master/2020-01-03/README.md)
 - [1 月 10 日分享（by 何宇）- ES6（装饰器、拦截器，class）](https://github.com/duia-fe/weekly/blob/master/2020-01-10/README.md)
+- [1 月 17 日分享（by 龙佳）- ES6（字符串扩展、正则的扩展、数值的扩展、函数的扩展）](https://github.com/duia-fe/weekly/blob/master/2020-01-17/README.md)
 
 ### 2019 年
 
