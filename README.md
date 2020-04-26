@@ -10,6 +10,10 @@
 - [1 月 10 日分享（by 何宇）- ES6（装饰器、拦截器，class）](https://github.com/duia-fe/weekly/blob/master/2020-01-10/README.md)
 - [1 月 17 日分享（by 龙佳）- ES6（字符串扩展、正则的扩展、数值的扩展、函数的扩展）](https://github.com/duia-fe/weekly/blob/master/2020-01-17/README.md)
 
+#### 20 年 1 月
+
+-[4 月 26 日分享（by李超凡）- React源码剖析(一)](https://github.com/duia-fe/weekly/blob/master/2020-04-26/README.md)
+
 ### 2019 年
 
 #### 19 年 6 月
