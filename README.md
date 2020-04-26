@@ -12,7 +12,7 @@
 
 #### 20 年 1 月
 
--[4 月 26 日分享（by李超凡）- React源码剖析(一)](https://github.com/duia-fe/weekly/blob/master/2020-04-26/README.md)
+- [4 月 26 日分享（by李超凡）- React源码剖析(一)](https://github.com/duia-fe/weekly/blob/master/2020-04-26/README.md)
 
 ### 2019 年
 
