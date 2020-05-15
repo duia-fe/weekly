@@ -1,7 +1,6 @@
 # React 源码剖析(三)
 
 - ### render & hydrate
-- ### diff 计算
 - ### setState
 
 ## render() & hydrate() 初始渲染
