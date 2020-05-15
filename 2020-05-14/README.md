@@ -285,7 +285,7 @@ function FiberNode(tag: WorkTag, pendingProps: mixed, key: null | string, mode: 
 
 ### ReactElement 对应的结构
 
-![Image text](./1.png)
+![Image text](https://s4.aconvert.com/convert/p3r68-cdx67/a8b3n-gy1w8.jpg)
 
 ## setState
 
