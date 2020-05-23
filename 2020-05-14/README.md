@@ -425,10 +425,9 @@ child = inst.render();
 
 ### 更新过程中会调用的生命周期
 
-- componentWillReceiveProps (nextProps) ----- getDerivedStateFromProps(nextProps, prevState)
 - shouldComponentUpdate(nextProps,nextState)
 - componentWillUpdate (nextProps,nextState) ----- getSnapshotBeforeUpdate(prevProps, prevState)
-- componentDidUpdate(prevProps,prevState)
 - render()
+- componentDidUpdate(prevProps,prevState)
 
 by:`邓伟`
