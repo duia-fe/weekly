@@ -4,21 +4,13 @@
 
 ### 2020 年
 
-#### 20 年 5 月
-
+- [6 月 5 日分享（by徐旺）- React源码剖析(四)](https://github.com/duia-fe/weekly/blob/master/2020-06-05/README.md)
 - [5 月 14 日分享（by邓伟）- React源码剖析(三)](https://github.com/duia-fe/weekly/blob/master/2020-05-14/README.md)
 - [5 月 9 日分享（by冯艳秋）- React源码剖析(二)](https://github.com/duia-fe/weekly/blob/master/2020-05-09/README.md)
-
-#### 20 年 4 月
-
 - [4 月 26 日分享（by李超凡）- React源码剖析(一)](https://github.com/duia-fe/weekly/blob/master/2020-04-26/README.md)
-
-#### 20 年 1 月
-
-- [1 月 3 日分享（by 虚竹）- ES6（迭代器）](https://github.com/duia-fe/weekly/blob/master/2020-01-03/README.md)
-- [1 月 10 日分享（by 何宇）- ES6（装饰器、拦截器，class）](https://github.com/duia-fe/weekly/blob/master/2020-01-10/README.md)
 - [1 月 17 日分享（by 龙佳）- ES6（字符串扩展、正则的扩展、数值的扩展、函数的扩展）](https://github.com/duia-fe/weekly/blob/master/2020-01-17/README.md)
-
+- [1 月 10 日分享（by 何宇）- ES6（装饰器、拦截器，class）](https://github.com/duia-fe/weekly/blob/master/2020-01-10/README.md)
+- [1 月 3 日分享（by 虚竹）- ES6（迭代器）](https://github.com/duia-fe/weekly/blob/master/2020-01-03/README.md)
 
 ### 2019 年
 
