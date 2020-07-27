@@ -6,6 +6,7 @@
 
 ### React源码分析 v16.13.1
 - [2020 年 7 月 25 日分享（by龙佳）- React源码剖析(七)](https://github.com/duia-fe/weekly/blob/master/2020-07-25/README.md)
+- [2020 年 7 月 11 日分享（by何宇）- React源码剖析(六)](https://github.com/duia-fe/weekly/blob/master/2020-07-11/README.md)
 - [2020 年 6 月 20 日分享（by虚竹）- React源码剖析(五)](https://github.com/duia-fe/weekly/blob/master/2020-06-20/README.md)
 - [2020 年 6 月 5 日分享（by徐旺）- React源码剖析(四)](https://github.com/duia-fe/weekly/blob/master/2020-06-05/README.md)
 - [2020 年 5 月 14 日分享（by邓伟）- React源码剖析(三)](https://github.com/duia-fe/weekly/blob/master/2020-05-14/README.md)
