@@ -18,7 +18,7 @@
 - [2020 年 1 月 10 日分享（by 何宇）- ES6（装饰器、拦截器，class）](https://github.com/duia-fe/weekly/blob/master/2020-01-10/README.md)
 - [2020 年 1 月 3 日分享（by 虚竹）- ES6（迭代器）](https://github.com/duia-fe/weekly/blob/master/2020-01-03/README.md)
 - [2019 年 12 月 27 日分享（by 罗冬蓉）- ES6(Promise 与 Generator)](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-27/README.md)
-- [2019 年1 2 月 20 日分享（by 丁紫伊）- ES6(Set 与 Map)](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-20/README.md)
+- [2019 年 12 月 20 日分享（by 丁紫伊）- ES6(Set 与 Map)](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-20/README.md)
 - [2019 年 12 月 13 日分享（by 徐旺）- ES6（前瞻、let 与 const、解构赋值、延展操作符、Symbol）](https://github.com/duia-fe/weekly/blob/master/2019-share/2019-12-13/README.md)
 
 ### 2019 年
