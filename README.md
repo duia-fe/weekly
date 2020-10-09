@@ -5,6 +5,8 @@
 ### 2020 年
 
 ### 可视化
+
+- [2020 年 9 月 19 日分享（by冯艳秋）- Echarts源码结构浅析](https://github.com/duia-fe/weekly/tree/master/2020-09-19/README.md)
 - [2020 年 8 月 22 日分享（by李超凡）- Echarts源码结构浅析](https://github.com/duia-fe/weekly/blob/master/2020-08-22/README.md)
 
 ### React源码分析 v16.13.1
